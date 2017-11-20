@@ -1,0 +1,53 @@
+/*Colors*/
+.white{
+    background: white;
+}
+
+.white-font{
+    color:white;
+}
+
+.grey{
+    background:#1a1b1c;
+}
+.grey-font{
+    color:#1a1b1c;
+}
+.blue{
+    background:#033ebc;
+}
+.blue-font{
+    color:#033ebc;
+}
+.light-blue{
+    background: #60e9ff;
+}
+.light-blue-font{
+    color: #60e9ff;
+}
+.orange{
+    background: #ff651e;
+}
+.orange-font{
+    color: #ff651e;
+}
+.red{
+    background:#ff1e1e;
+}
+.red-font{
+    color:#ff1e1e;
+}
+.green{
+    background: #1eff56;
+}
+.green-font{
+    color:#1eff56;
+}
+
+.rounded-div{
+    border-radius: 15px;
+}
+
+#modalClose:hover{
+    color:#ff651e;
+}

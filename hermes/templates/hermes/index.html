@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+            integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+            crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+              crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+              integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+              crossorigin="anonymous">
+      </script>
+      {%  load static %}
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="http://d3js.org/topojson.v0.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://use.fontawesome.com/8265947dd0.js"></script>
+      <script src="{% static 'datamaps.world.min.js'%}"></script>
+      <script src="{% static 'javascript/map.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'hermes/style.css' %}">
+      <script src="{% static  'javascript/map.js'%}"></script>
+
+  </head>
+  <body onload="initMap(); mapModal('map_container')">
+      <div id="header" style="width:100%;height:50px;background: #1a1b1c;">
+{#              <div style="position: relative;float:left;">#}
+          <div class="row">
+                <div class="col-xs-12 col-sm-1">
+                    <div style="background: #1a1b1c;padding:10px;text-align: center">
+                        <span>
+                          <i class="fa fa-bars fa-2x" style="color: white"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-0 col-sm-10 white-font">
+                    PRICE IS WROTNG
+                </div>
+{#              <div style="position: relative;float:right">#}
+                <div class="col-xs-12 col-sm-1">
+                  <div style="background: #1a1b1c;padding:10px;text-align: center">
+                      <span>
+                          <i class="fa fa-globe fa-2x green-font"></i>
+                      </span>
+                  </div>
+                </div>
+          </div>
+      </div>
+
+{#      <div id="map_tab_container" class="row" style="height:25px;margin-bottom: 10px">#}
+{#          <div class="col-xs-0 col-sm-5" style="background: whitesmoke;z-index:26"></div>#}
+{#          <div id="map_tab" style="background: #ececec;height:23px;text-align: center;margin-bottom: 10px;#}
+{#                    border-color:#dfdfdf;border-style:solid;border-width: 1px 1px 0;z-index: 10;width:100%">#}
+{#              <span>#}
+{#                  <i class="fa fa-angle-double-down" style="color: white"></i>#}
+{#              </span>#}
+{#              <div id="map_tab_map_container" style="padding: 10px;margin:10px"></div>#}
+{#                    <div id="map_tab_map_div"></div>#}
+{#              </div>#}
+{#          <div class="col-xs-0 col-sm-5 col-sm-offset-7" style="background: whitesmoke;z-index:26"></div>#}
+{#      </div>#}
+      <div id="map" style="position: absolute;left:0;height: 500px;width: 100%;margin-top:45px"></div>
+
+      {% block modal %}
+      {% endblock %}
+
+  </body>
+</html>
+
+<footer>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgY1YJHAHwGLAtk2fARbo-bfCj-QqL6U&callback=initMap">
+    </script>
+</footer>
