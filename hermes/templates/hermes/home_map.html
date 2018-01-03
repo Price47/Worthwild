@@ -1,4 +1,4 @@
-{% extends 'hermes/index.html' %}
+{% extends 'hermes/home.html' %}
 
 
 {% block modal %}
@@ -6,17 +6,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>D3 World Map</title>
-    <style>
-      path {
-        stroke: white;
-        stroke-width: 0.5px;
-        fill: black;
-      }
-        #modalClose:hover{
-            background: #ff651e;
-        }
-    </style>
       {% load static %}
       <link href="{% static 'hermes/style.css' %}">
   </head>
@@ -27,7 +16,7 @@
             <div id="map_container" style="position:relative;left:1%;width:98%;height:100%">
             <div style="position:relative;float:right;margin-right:15px;top:15px;">
                     <button id="modalClose" style="background:#ff651e; width:100px; border-radius: 10px;border:none">
-                        <i class="fa fa-times fa-2x orange-font">
+                        <i class="fa fa-times fa-2x grey-font">
                         </i>
                     </button>
             </div>

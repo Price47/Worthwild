@@ -1,0 +1,15 @@
+{% extends 'hermes/index.html' %}
+{% load static %}
+
+{% block content %}
+    <body onload="changeControlFunction('privacy')">
+
+        <div style="text-align: center;width: 100%;height: 20px;">
+            <b>{{ site_name }} Privacy Policy </b>
+        </div>
+        <hr>
+        <div style="padding:10px;height: 100vh">
+            <iframe src="{% static 'hermes/privacy.txt' %}" style="width: 100%;height:600px;border:none;margin-top: 15px"></iframe>
+        </div>
+    </body>
+{% endblock %}

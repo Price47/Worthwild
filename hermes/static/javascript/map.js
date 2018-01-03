@@ -32,7 +32,7 @@ function mapModal(id) {
             dataAvailableHover: '#60e9ff'
         },
         data: {
-            USA: {fillKey: "dataAvailable", borderColor: 'green', highlightFillColor: 'dataAvailableHover', highlightBorderColor: '#60e9ff'}
+            USA: {fillKey: "dataAvailable", borderColor:'#033ebc', highlightFillColor: '#60e9ff', highlightBorderColor: '#60e9ff'}
         }
     });
     d3.select(window).on('resize', map.resize());
@@ -43,45 +43,4 @@ function mapModal(id) {
     }
 }
 
-
-$(document).ready(function(){
-    var mapToggled = false;
-    var mapTab = $('#map_tab');
-
-    function toggle_map(selector){
-        if(mapToggled){
-            $(selector).animate({
-                height: '-=500px'});
-            $('#modal_div').css('display','none');
-            mapToggled=false
-        }
-        else{
-            $(selector).animate({
-                height: '+=500px'});
-            $('#modal_div').css('display','inline');
-            mapToggled=true
-        }
-    }
-
-    $('#modalClose').click(function(){
-        $('#modal_div').css('display','none');
-    });
-
-    mapTab.hover(
-        function(){
-            $(this).css('background','#ddd')
-    },
-        function(){
-            $(this).css('background','#ececec')
-    });
-
-    mapTab.click(
-        function(){
-            $(this).css('height','500px');
-            toggle_map();
-            mapModal('map_tab_map_div')
-
-    })
-
-});
 

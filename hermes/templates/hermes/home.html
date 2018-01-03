@@ -1,0 +1,17 @@
+{% extends 'hermes/index.html' %}
+
+{% block content %}
+    <body onload="initMap(); mapModal('map_container'); changeControlFunction('home')" style="background: whitesmoke">
+
+          <div id="map" style="position: absolute;left:0;height: 500px;width: 100%;margin-top:45px"></div>
+
+          {% block modal %}
+          {% endblock %}
+
+    </body>
+    <footer>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgY1YJHAHwGLAtk2fARbo-bfCj-QqL6U&callback=initMap">
+        </script>
+    </footer>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'hermes/index.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+</head>
+<body onload="changeControlFunction('about')">
+    <div>
+        <img style="width:100%;" src="{% static 'hermes/northeastern.jpg' %}">
+        <div style="background:#111111;width:40%;top:20%;left:30%;position: absolute;
+        color:whitesmoke;border-radius: 10px;z-index: 5; text-align: center;opacity: .9">
+            <b style="font-size: 3em"> About us </b>
+        </div>
+    </div>
+    <div class="row" style="margin: 0">
+          <div class="col-sm-4 col-xs-12" style="padding:0!important">
+              <div class="about-div">
+                  <img src="{% static 'hermes/john.jpg' %}">
+                  <h2>JOHNNY BOY CORTESe</h2>
+                  <p> THis shits all johns idea. All he does is travel I don't think
+                      I've ever seen him in his office or at school</p>
+              </div>
+          </div>
+          <div class="col-sm-8 col-xs-12" style="padding:0!important">
+              <img style="width:100%;height:100%" src="{% static 'hermes/ggbridge.jpg' %}">
+          </div>
+    </div>
+    <div class="row" style="margin: 0">
+          <div class="col-sm-8 col-xs-12" style="padding:0!important">
+                <img style="width:100%;height:100%" src="{% static 'hermes/brook.jpg' %}">
+          </div>
+          <div class="col-sm-4 col-xs-12" style="padding:0!important">
+                <div class="about-div">
+                    <img src="{% static 'hermes/price.jpg' %}">
+                    <h2>Richie rich</h2>
+                    <p>Just a cool ass dude.
+                    Made this website and is fly as fuck.</p>
+                </div>
+          </div>
+    </div>
+</body>
+{% endblock %}
