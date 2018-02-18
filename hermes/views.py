@@ -8,7 +8,7 @@ context = {'site_name':SITE_NAME}
 
 def home(request):
 
-    return render(request, 'hermes/home_map.html', context={'api_key':GOOGLE_API_KEY,
+    return render(request, 'hermes/menu.html', context={'api_key':GOOGLE_API_KEY,
                                                             'site_name': SITE_NAME})
 
 def home_map(request):

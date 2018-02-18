@@ -57,6 +57,15 @@
     width:100%;
 }
 
+#header{
+    width: 100%;
+    height:55px;
+    position: fixed;
+    top:0;
+    z-index:15;
+    background:#1a1b1c
+}
+
 #menu_list{
     list-style-type: none;
     width:100%;
@@ -95,16 +104,22 @@
     height:200px;
     background:black;
     text-align: center;
-    color:white
+    color:#fefefe;
 }
 
+.menu-card img{
+    width: 100%;
+    height:100%;
+    filter:opacity(0%)
+}
 /*IMAGE TEXT*/
 .img-container {
     float:left;
-    width: 33.3333333%;
     position: relative;
     text-align: center;
     color: white;
+    margin: 0 !important;
+    padding:0 !important;
 }
 
 .bottom-left {

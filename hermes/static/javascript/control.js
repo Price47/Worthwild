@@ -80,7 +80,7 @@ $(document).ready(function(){
     $('.menu-card').each(function(){
         $(this).hover(
             function(){
-                $(this).find('img').css('filter', 'opacity(100%)')
+                $(this).find('img').css('filter', 'opacity(65%)')
             },function(){
                 $(this).find('img').css('filter', 'opacity(0%)')
 
