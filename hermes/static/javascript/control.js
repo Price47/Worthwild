@@ -89,18 +89,35 @@ $(document).ready(function(){
 });
 
 function changeControlFunction(control){
-        map = document.getElementById('header_map_button');
-        back = document.getElementById('header_back_button');
-        if(control.search('home')==-1){
-            map.style.display = 'none';
-            back.style.display = 'inline';
-        }
-        else{
-            back.style.display = 'none';
-            map.style.display = 'inline'
-        }
-    }
+    var classes = 'light-blue-font orange-font green-font red-font';
+    var homeLink = document.getElementById("home_link")
+    var header_items = $('#map_icon, #menu_button');
+        switch (control){
+            case 'home':
+                header_items.removeClass(classes);
+                header_items.addClass('light-blue-font');
+                homeLink.style.borderRight = '3px solid #60e9ff';
+                break;
+            case 'about':
+                header_items.removeClass(classes);
+                header_items.addClass('green-font');
+                homeLink.style.borderRight = '3px solid #1eff56';
+                break;
+            case 'privacy':
+                header_items.removeClass(classes);
+                header_items.addClass('red-font');
+                homeLink.style.borderRight = '3px solid #ff1e1e';
+                break;
+            case 'contact':
+                header_items.removeClass(classes);
+                header_items.addClass('orange-font');
+                homeLink.style.borderRight = '3px solid #ff651e';
+                break;
+            default:
+                header_items.removeClass(classes);
+                header_items.addClass('light-blue-font');
+                homeLink.style.borderRight = '3px solid #60e9ff';
 
-function openMenu(){
-    console.log('OPENING MENU FUCKING FINALLY')
-}
+        }
+    };
+

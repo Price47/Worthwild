@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
             integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
             crossorigin="anonymous">
-      <!-- end -->
+      <!-- end boostrap-->
 
       <script src="https://d3js.org/d3.v4.min.js"></script>
       <script src="http://d3js.org/topojson.v0.min.js"></script>
@@ -25,46 +25,48 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script src="https://use.fontawesome.com/8265947dd0.js"></script>
+
+      <!-- static -->
       {%  load static %}
       <script src="{% static 'datamaps.world.min.js'%}"></script>
       <script src="{% static 'javascript/map.js' %}"></script>
       <link rel="stylesheet" href="{% static 'hermes/style.css' %}">
       <script src="{% static  'javascript/map.js'%}"></script>
       <script src="{% static  'javascript/control.js'%}"></script>
+      <!-- end static -->
   </head>
 
 <div id="header">
           <div class="row">
-                <div class="col-xs-6 col-sm-2">
-                    <div style="text-align: center;padding:5px">
+                <div class="col-xs-4 col-sm-2">
+                  <a id=home_link href="/menu" style="border-right:3px solid #60e9ff;width: 100%;" class="header-item">
+                      <div style="margin-top: 5px;">
+                          <i id=map_icon class="fa fa-globe fa-2x light-blue-font"></i>
+                          <b> Worthwind </b>
+                      </div>
+                  </a>
+                </div>
+                <div class="col-xs-4 col-sm-8"></div>
+                <div class="col-xs-4 col-sm-2">1
+                    <div class="header-item">
                         <div class="dropdown">
                               <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                  aria-haspopup="true" aria-expanded="false">
-                                <i id=map_icon class="fa fa-align-justify fa-2x green-font"></i>
+                                <i id=menu_button class="fa fa-align-justify fa-2x light-blue-font"></i>
                               </a>
 
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="about">About</a>
-                                <a class="dropdown-item" href="contact">Contact</a>
-                                <a class="dropdown-item" href="privacy">Privacy</a>
+                              <div class="dropdown-menu header-button" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/about">About</a>
+                                <a class="dropdown-item" href="/contact">Contact</a>
+                                <a class="dropdown-item" href="/privacy">Privacy</a>
                               </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-0 col-sm-8 visible-sm" style="text-align: center; color:white;margin:0; background: #1a1b1c;">
-                    Worthwild
-                </div>
-                <div class="col-xs-6 col-sm-2">
-                  <div id="map_tab_container" style="text-align: center;background: black">
-                      <a href="menu" id="header_map_button" style="width:100%;border:none">
-                          <i id=map_icon class="fa fa-th-large fa-2x green-font"></i>
-                      </a>
-                  </div>
-                </div>
           </div>
       </div>
 
-  <body style="background:whitesmoke">
+  <body style="background:#4a4b4c">
     <div style="margin-top: 50px">
         {% block content %}
         {% endblock %}
