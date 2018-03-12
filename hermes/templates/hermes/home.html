@@ -2,13 +2,16 @@
 
 {% block content %}
     <body style="background: whitesmoke">
-
-          <div id="map" style="position: absolute;left:0;height: 500px;width: 100%;margin-top:45px"></div>
-
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map" style="position: absolute;left:0;height: 500px;width: 100%;margin-top:45px"></div>
     </body>
+
     <footer>
-        <script async defer
-            src="{{ google_map_url }}">
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
         </script>
-    </footer>
+
+        <script async defer
+            src='{{ google_map_url }}'>
+        </script>
+</footer>
 {% endblock %}

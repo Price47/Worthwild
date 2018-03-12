@@ -4,46 +4,42 @@
 {% block content %}
 
 <body>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/newyork">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map">
     <div class="centered" style="color:white;z-index:5">New York</div>
     <div class="menu-card">
         <img src="{% static 'hermes/NY.jpeg' %}">
     </div>
 </a>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/boston">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map">
     <div class="centered" style="color:white;z-index:5">Boston</div>
     <div class="menu-card">
         <img src="{% static 'hermes/boston.jpg' %}">
     </div>
 </a>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/sanfrancisco">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map">
     <div class="centered" style="color:white;z-index:5">San Francisco</div>
     <div class="menu-card">
         <img src="{% static 'hermes/sanfran.jpg' %}">
     </div>
 </a>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/pittsburgh">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map" onclick="drawMap()">
     <div class="centered" style="color:white;z-index:5">Pittsburgh</div>
     <div class="menu-card">
         <img src="{% static 'hermes/pitt.jpg' %}">
     </div>
 </a>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/milwaukee">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map">
     <div class="centered" style="color:white;z-index:5">Milwaukee</div>
     <div class="menu-card">
         <img src="{% static 'hermes/milwaukee.jpg' %}">
     </div>
 </a>
-<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map/austin">
+<a class="img-container col-xs-12 col-md-6 col-lg-4" href="map">
     <div class="centered" style="color:white;z-index:5">Austin</div>
     <div class="menu-card">
         <img src="{% static 'hermes/austin.jpg' %}">
     </div>
 </a>
-
-
-
-
 </body>
 
 {% endblock %}

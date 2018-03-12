@@ -64,7 +64,7 @@
     background: black;
     border-radius:5px;
     position:relative;
-    float:right
+    float:right;
 }
 
 
@@ -96,6 +96,11 @@
     text-decoration: none;
     color:white
 }
+
+#header_dropdown a{
+    color:white
+}
+
 
 .about-div{
     background: #111111;
@@ -134,7 +139,11 @@
 }
 
 #home_link:hover b{
-    color:black;
+    color: #1a1b1c;
+}
+
+#header_dropdown a:hover{
+    color: #1a1b1c;
 }
 
 /*IMAGE TEXT*/

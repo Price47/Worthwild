@@ -1,13 +1,25 @@
 /**
  * Created by rockstar645 on 11/21/17.
  */
+var HEADER_MENU_HOVER_COLOR = '#60e9ff';
+var HEX_CLASS_MAP = {
+    '#60e9ff': 'light-blue-font',
+    '#1eff56': 'green-font',
+    '#ff1e1e': 'red-font',
+    '#ff651e': 'orange-font'
+};
+
+
 $(document).ready(function(){
     var mapToggled = false;
     var mapTab = $('#map_tab');
     var menu = $('#menu');
     var headerMapButton = $('#header_map_button');
-    var headerMenuButton = $('#header_menu_button');
+    var headerMenuButton = $('#home_link');
     var menuClose = $('#menu_close');
+    var headerDropdownItems = $('#header_dropdown a');
+    var homeIcon = $('#map_icon');
+    var classes = 'light-blue-font orange-font green-font red-font';
 
 
     function toggle_map(selector){
@@ -60,13 +72,6 @@ $(document).ready(function(){
         }
     );
 
-    headerMenuButton.click(
-        function(){
-            console.log("hutdrykftguy");
-            menu.animate({width:"+=35%"});
-            menu.css('display','inline');
-    });
-
     $('#menu_list li').each(function(){
         $(this).hover(
             function(){
@@ -75,6 +80,27 @@ $(document).ready(function(){
             function(){
                 $(this).css('background', '#111111')
             })
+    });
+
+    headerMenuButton.hover(
+        function(){
+            $(this).css('background', HEADER_MENU_HOVER_COLOR);
+            homeIcon.removeClass(classes);
+            homeIcon.addClass('grey-font');
+        }, function(){
+            $(this).css('background', '#1a1b1c');
+            homeIcon.removeClass(classes);
+            homeIcon.addClass(HEX_CLASS_MAP[HEADER_MENU_HOVER_COLOR]);
+        });
+
+    headerDropdownItems.each(function(){
+       $(this).hover(
+           function(){
+                $(this).css('background', HEADER_MENU_HOVER_COLOR);
+           },function(){
+                $(this).css('background','black');
+           }
+       )
     });
 
     $('.menu-card').each(function(){
@@ -88,36 +114,34 @@ $(document).ready(function(){
     })
 });
 
-function changeControlFunction(control){
-    var classes = 'light-blue-font orange-font green-font red-font';
-    var homeLink = document.getElementById("home_link")
+function updateColors(className, hex){
+    var homeLink = document.getElementById("home_link");
     var header_items = $('#map_icon, #menu_button');
-        switch (control){
-            case 'home':
-                header_items.removeClass(classes);
-                header_items.addClass('light-blue-font');
-                homeLink.style.borderRight = '3px solid #60e9ff';
-                break;
-            case 'about':
-                header_items.removeClass(classes);
-                header_items.addClass('green-font');
-                homeLink.style.borderRight = '3px solid #1eff56';
-                break;
-            case 'privacy':
-                header_items.removeClass(classes);
-                header_items.addClass('red-font');
-                homeLink.style.borderRight = '3px solid #ff1e1e';
-                break;
-            case 'contact':
-                header_items.removeClass(classes);
-                header_items.addClass('orange-font');
-                homeLink.style.borderRight = '3px solid #ff651e';
-                break;
-            default:
-                header_items.removeClass(classes);
-                header_items.addClass('light-blue-font');
-                homeLink.style.borderRight = '3px solid #60e9ff';
+    var classes = 'light-blue-font orange-font green-font red-font';
 
-        }
-    };
+    header_items.removeClass(classes);
+    header_items.addClass(className);
+    homeLink.style.borderRight = '3px solid ' + hex;
+    HEADER_MENU_HOVER_COLOR = hex;
+}
+
+function changeControlFunction(control) {
+    switch (control) {
+        case 'home':
+            updateColors('light-blue-font', '#60e9ff');
+            break;
+        case 'about':
+            updateColors('green-font', '#1eff56');
+            break;
+        case 'privacy':
+            updateColors('red-font', '#ff1e1e');
+            break;
+        case 'contact':
+            updateColors('orange-font', '#ff651e');
+            break;
+        default:
+            updateColors('light-blue-font', '#60e9ff');
+
+    }
+}
 
