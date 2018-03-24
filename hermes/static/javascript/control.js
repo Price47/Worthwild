@@ -9,8 +9,8 @@ var HEX_CLASS_MAP = {
     '#ff651e': 'orange-font'
 };
 
-
 $(document).ready(function(){
+
     var mapToggled = false;
     var mapTab = $('#map_tab');
     var menu = $('#menu');
@@ -20,7 +20,6 @@ $(document).ready(function(){
     var headerDropdownItems = $('#header_dropdown a');
     var homeIcon = $('#map_icon');
     var classes = 'light-blue-font orange-font green-font red-font';
-
 
     function toggle_map(selector){
         if(mapToggled){
@@ -36,6 +35,7 @@ $(document).ready(function(){
             mapToggled=true
         }
     }
+
 
     $('#modalClose').click(function(){
         $('#modal_div').css('display','none');

@@ -187,3 +187,18 @@
     transform: translate(-50%, -50%);
 }
 
+.quiz-select{
+    /*background: #1a1b1c;*/
+    color:white;
+    border: none;
+    height: 45px;
+    text-align: center;
+}
+
+.gradient4{
+    background: #be00db; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #be00db , #ff4444); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #be00db, #ff4444); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #be00db, #ff4444); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #be00db , #ff4444); /* Standard syntax */
+}

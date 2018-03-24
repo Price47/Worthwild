@@ -1,7 +1,16 @@
 {% extends 'hermes/index.html' %}
 
 {% block content %}
+    <head>
+        {% load static %}
+        <script src="{% static 'javascript/home.js'%}"></script>
+    </head>
     <body style="background: whitesmoke">
+            <select id="city_dropdown" class="gradient4 quiz-select">
+                    {% for city in cities %}
+                        <option value={{ city }}> {{ city }}</option>
+                    {% endfor %}
+            </select>
         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map" style="position: absolute;left:0;height: 500px;width: 100%;margin-top:45px"></div>
     </body>

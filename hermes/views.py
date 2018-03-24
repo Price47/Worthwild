@@ -13,9 +13,13 @@ def home(request):
     G = GoogleMaps('New York, NY')
     location_geometry = G.geocode()
     lat, long = location_geometry
+
+    cities = ["boston", "New York", "London", "San Fransisco", "Pittsburgh"]
+
     map_url = 'https://maps.googleapis.com/maps/api/js?key={}&&libraries=places&callback=initMap'.format(GOOGLE_API_KEY)
     return render(request, 'hermes/home.html', context={'google_map_url': map_url,
-                                                        'site_name': SITE_NAME})
+                                                        'site_name': SITE_NAME,
+                                                        'cities':cities})
 
 def about(request):
 

@@ -13,14 +13,6 @@ function initMap() {
           center: NY
         });
         mapDiv.map = map;
-        var marker1 = new google.maps.Marker({
-          position: NY,
-          map: mapDiv.map
-        });
-        var marker2 = new google.maps.Marker({
-            position: {lat:41.7128, lng: -74.0064},
-            map: map
-        });
 
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
@@ -77,7 +69,20 @@ function initMap() {
         });
 
     
-        var locations = getLocation();
+        var locations = [
+            {'lat':40.7128, 'lng': -72.0060},
+            {'lat':41.7128, 'lng': -73.0060},
+            {'lat':41.28, 'lng': -73.1260},
+            {'lat':43.7128, 'lng': -72.0060},
+            {'lat':41.7128, 'lng': -73.0060},
+            {'lat':41.28, 'lng': -73.1260},
+            {'lat':42.7128, 'lng': -72.0060},
+            {'lat':43.7128, 'lng': -73.0060},
+            {'lat':40.28, 'lng': -73.1260},
+            {'lat':41.7128, 'lng': -72.0060},
+            {'lat':42.7128, 'lng': -73.0060},
+            {'lat':41.7, 'lng': -73.1260}
+        ];
         var labels = ['price','is','rad','and','cool','plus','fly','as','shit','tar','tewr','qhtq'];
 
         // Add some markers to the map.
@@ -99,7 +104,20 @@ function initMap() {
 }
 
 function openAt(lat, long) {
-    mapDiv.map.panTo({lat:lat, lng: long})
+    mapDiv.map.panTo({lat:lat, lng: long});
+    $.ajax({
+        type: 'GET',
+        url: apiURL + 'locations',
+        success: function(data) {
+            console.log(data)
+        }
+    }).done(function(data) {
+        mapDiv.map.panTo({lat:lat, lng: long});
+    })
+}
+
+function panTo(location) {
+
 }
 
 function getLocation(){
